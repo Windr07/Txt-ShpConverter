@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WLib.CoordCoverter</RootNamespace>
+    <AssemblyName>WLib.CoordCoverter</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>批量坐标文件转换（txt=shp）</ProductName>
+    <ApplicationRevision>720</ApplicationRevision>
+    <ApplicationVersion>1.0.18.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>
+    </ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="gdalconst_csharp">
+      <HintPath>BaseDLL\gdalconst_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdal_csharp">
+      <HintPath>BaseDLL\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="ogr_csharp">
+      <HintPath>BaseDLL\ogr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="osr_csharp">
+      <HintPath>BaseDLL\osr_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="SplitButton">
+      <HintPath>BaseDLL\SplitButton.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <HintPath>BaseDLL\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\CfgRedlineTxt.cs" />
+    <Compile Include="View\Control\ESelectPathType.cs" />
+    <Compile Include="View\Control\EShowButtonOption.cs" />
+    <Compile Include="View\Control\EWorkspaceType.cs" />
+    <Compile Include="View\Control\DataSourceSelector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Control\DataSourceSelector.designer.cs">
+      <DependentUpon>DataSourceSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ETxtContent.cs" />
+    <Compile Include="Model\SpatialRef\TGeoSpatialRef.cs" />
+    <Compile Include="Model\SpatialRef\TGeoSpatialRefColl.cs" />
+    <Compile Include="Model\SpatialRef\TPrjSpatialRef.cs" />
+    <Compile Include="Model\TField.cs" />
+    <Compile Include="Model\TPolygon.cs" />
+    <Compile Include="Model\TRing.cs" />
+    <Compile Include="Model\TProjInfo.cs" />
+    <Compile Include="RedLineManager.cs" />
+    <Compile Include="Utility\FileEncode.cs" />
+    <Compile Include="View\ConverterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConverterForm.Designer.cs">
+      <DependentUpon>ConverterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Control\PathBoxSimple.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="View\Control\PathBoxSimple.designer.cs">
+      <DependentUpon>PathBoxSimple.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ConverterForm_ShpToTxt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ConverterForm_TxtToShp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\ShpSourceInfo.cs" />
+    <Compile Include="View\InputForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\InputForm.designer.cs">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\OpenDataSourceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\OpenDataSourceForm.Designer.cs">
+      <DependentUpon>OpenDataSourceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\ShpToTxtSettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ShpToTxtSettingsForm.Designer.cs">
+      <DependentUpon>ShpToTxtSettingsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\EnumDescriptionAttribute.cs" />
+    <Compile Include="Utility\EnumHelper.cs" />
+    <Compile Include="Utility\GdalHelper.cs" />
+    <EmbeddedResource Include="View\Control\DataSourceSelector.resx">
+      <DependentUpon>DataSourceSelector.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ConverterForm.resx">
+      <DependentUpon>ConverterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Control\PathBoxSimple.resx">
+      <DependentUpon>PathBoxSimple.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\OpenDataSourceForm.resx">
+      <DependentUpon>OpenDataSourceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\ShpToTxtSettingsForm.resx">
+      <DependentUpon>ShpToTxtSettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="SampleData\SampleData.dbf" />
+    <None Include="SampleData\SampleData.prj" />
+    <None Include="SampleData\SampleData.shp" />
+    <None Include="SampleData\SampleData.shx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseDLL\gdalconst_csharp.dll" />
+    <Content Include="BaseDLL\gdal_csharp.dll" />
+    <Content Include="BaseDLL\ogr_csharp.dll" />
+    <Content Include="BaseDLL\osr_csharp.dll" />
+    <Content Include="BaseDLL\SplitButton.dll" />
+    <Content Include="BaseDLL\System.Core.dll" />
+    <Content Include="Config\CfgRedlineTxt.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="SampleData\SampleData.txt" />
+    <Content Include="Vcredist_x86.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

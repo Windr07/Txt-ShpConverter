@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WLib.CoordCoverter", "WLib.CoordCoverter\WLib.CoordCoverter.csproj", "{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}.Debug|x86.ActiveCfg = Debug|x86
+		{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}.Debug|x86.Build.0 = Debug|x86
+		{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}.Release|Any CPU.ActiveCfg = Release|x86
+		{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}.Release|Any CPU.Build.0 = Release|x86
+		{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}.Release|x86.ActiveCfg = Release|x86
+		{DF5F8FFA-7F10-4D82-B708-9D3B151A41F3}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6AAEAB6F-EE97-4F55-8780-FFA7E957E21A}
+	EndGlobalSection
+EndGlobal

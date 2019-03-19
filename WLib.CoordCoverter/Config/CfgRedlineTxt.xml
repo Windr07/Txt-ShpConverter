@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Root>
+  <Fields>
+    <!-- 属性信息 -->
+    <CoorAttField>
+      <Field name="GSBBH" aliasName="格式版本号" default=""/>
+      <Field name="SJCSDW" aliasName="数据产生单位" default=""/>
+      <Field name="SJCSRQ" aliasName="数据产生日期" default=""/>
+      <Field name="ZBX" aliasName="坐标系" default=""/>
+      <Field name="JDFD" aliasName="几度分带" default="3"/>
+      <Field name="TYLX" aliasName="投影类型" default="高斯克吕格"/>
+      <Field name="JLDW" aliasName="计量单位" default="米"/>
+      <Field name="DH" aliasName="带号" default=""/>
+      <Field name="JD" aliasName="精度" default="0.001"/>
+      <Field name="ZHCS" aliasName="转换参数" default=",,,,,,"/>
+    </CoorAttField>
+
+    <!-- 地块信息 -->
+    <BlockField>
+      <Field name="JZDS" aliasName="界址点数"/>
+      <Field name="DKMJ" aliasName="地块面积"/>
+      <Field name="DKBH" aliasName="地块编号"/>
+      <Field name="DKMC" aliasName="地块名称"/>
+      <Field name="JHLX" aliasName="几何类型"/>
+      <Field name="TFH" aliasName="图幅号"/>
+      <Field name="DKYT" aliasName="地块用途"/>
+      <Field name="DLBM" aliasName="地类编码"/>
+      <!--<Field name="PROCODE" aliasName="系统编号"/>-->
+    </BlockField>
+  </Fields>
+
+  <!-- 支持的坐标系 -->
+  <SpatialRef>
+    <Geography name="GCS_Xian_1980" aliasName="80国家大地坐标系,80西安坐标系,Xian 1980" wkid="4610">
+      <Projection name="Xian_1980_3_Degree_GK_Zone" aliasName="80国家大地坐标高斯克吕格3度分带含带号投影坐标系">
+        <Item zone="25" wkid="2349"/>
+        <Item zone="26" wkid="2350"/>
+        <Item zone="27" wkid="2351"/>
+        <Item zone="28" wkid="2352"/>
+        <Item zone="29" wkid="2353"/>
+        <Item zone="30" wkid="2354"/>
+        <Item zone="31" wkid="2355"/>
+        <Item zone="32" wkid="2356"/>
+        <Item zone="33" wkid="2357"/>
+        <Item zone="34" wkid="2358"/>
+        <Item zone="35" wkid="2359"/>
+        <Item zone="36" wkid="2360"/>
+        <Item zone="37" wkid="2361"/>
+        <Item zone="38" wkid="2362"/>
+        <Item zone="39" wkid="2363"/>
+        <Item zone="40" wkid="2364"/>
+        <Item zone="41" wkid="2365"/>
+        <Item zone="42" wkid="2366"/>
+        <Item zone="43" wkid="2367"/>
+        <Item zone="44" wkid="2368"/>
+        <Item zone="45" wkid="2369"/>
+      </Projection>
+    </Geography>
+
+    <Geography name="GCS_China_Geodetic_Coordinate_System_2000" aliasName="2000国家大地坐标系,2000坐标系,CGCS2000" wkid="4490 ">
+      <Projection name="CGCS2000_3_Degree_GK_Zone" aliasName="2000国家大地坐标高斯克吕格3度分带含带号投影坐标系">
+        <Item zone="25" wkid="4513"/>
+        <Item zone="26" wkid="4514"/>
+        <Item zone="27" wkid="4515"/>
+        <Item zone="28" wkid="4516"/>
+        <Item zone="29" wkid="4517"/>
+        <Item zone="30" wkid="4518"/>
+        <Item zone="31" wkid="4519"/>
+        <Item zone="32" wkid="4520"/>
+        <Item zone="33" wkid="4521"/>
+        <Item zone="34" wkid="4522"/>
+        <Item zone="35" wkid="4523"/>
+        <Item zone="36" wkid="4524"/>
+        <Item zone="37" wkid="4525"/>
+        <Item zone="38" wkid="4526"/>
+        <Item zone="39" wkid="4527"/>
+        <Item zone="40" wkid="4528"/>
+        <Item zone="41" wkid="4529"/>
+        <Item zone="42" wkid="4530"/>
+        <Item zone="43" wkid="4531"/>
+        <Item zone="44" wkid="4532"/>
+        <Item zone="45" wkid="4533"/>
+      </Projection>
+    </Geography>
+  </SpatialRef>
+
+</Root>
