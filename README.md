@@ -1,10 +1,10 @@
 # Txt-ShpConverter
-txt和shp格式的坐标文件互转（Text format coordinate file and shape file convert to each other, using GDAL）
+txt和shp格式的坐标文件互转，使用开源库GDAL读shp文件（Text format coordinate file and shape file convert to each other, using GDAL）
 
 ## 说明
 ---
 本工具主要用于将txt格式的“勘测定界界址点坐标交换格式”坐标文件
-与ArcGIS提供的Shapefile文件进行互转，默认支持坐标系为西安80坐标和国家2000坐标。
+与ArcGIS提供的Shapefile文件进行互转，默认支持坐标系为西安80坐标和国家2000坐标（可配置）
 
 txt坐标文件格式规范可官方网站或百度查阅：
 * [勘测定界界址点坐标交换格式 - 湖南省自然资源厅](http://zrzyt.hunan.gov.cn/bsfw/zlxz/bgxz/201112/t20111227_4509015.html)
@@ -40,7 +40,7 @@ using System;
 using OSGeo.GDAL;
 using WLib.CoordCoverter;
 using WLib.CoordCoverter.Utility;
-void Main()
+static void Main()
 {
     GdalHelper.GdalInit();//初始化Gdal，注册所有驱动并支持中文
     Gdal.SetConfigOption("SHAPE_RESTORE_SHX", "YES"); //尝试还原/生成缺少的.shx文件
