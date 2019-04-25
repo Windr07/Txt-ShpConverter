@@ -1,5 +1,6 @@
 # Txt-ShpConverter
-txt和shp格式的坐标文件互转，使用开源库GDAL读shp文件（Text format coordinate file and shape file convert to each other, using GDAL）
+txt和shp格式的坐标文件互转工具，使用开源库GDAL读shp文件（Text format coordinate file and shape file convert to each other, using GDAL）
+[下载工具](CoordConverter.rar)
 
 ## 说明
 ---
