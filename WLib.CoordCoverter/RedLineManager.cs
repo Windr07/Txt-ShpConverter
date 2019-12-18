@@ -412,6 +412,8 @@ namespace WLib.CoordCoverter
             dataSource.FlushCache();
             layer.SyncToDisk();
             dataSource.Dispose();
+            
+            Modify_Prj_To_Gauss_Kruger(shpFilePath);//将prj文件中的“墨卡托”字符替换成“高斯克吕格”
         }
         /// <summary>
         /// 在指定路径下构建shp数据源（此操作不会生成实际的shp文件）
@@ -505,6 +507,19 @@ namespace WLib.CoordCoverter
             }
 
             layer.SyncToDisk();
+        }
+        /// <summary>
+        /// 将prj文件中的“墨卡托”字符替换成“高斯克吕格”
+        /// （由于GDAL生成的shp文件使用墨卡托替换高斯克吕格投影，因此通过该方法强制将坐标系信息改回高斯克吕格）
+        /// </summary>
+        public static void Modify_Prj_To_Gauss_Kruger(string shpFilePath)
+        {
+            var dir = Path.GetDirectoryName(shpFilePath);
+            var name = Path.GetFileNameWithoutExtension(shpFilePath);
+            var prjFilePath = Path.Combine(dir, name + ".prj");
+            var content =  File.ReadAllText(prjFilePath);
+            content = content.Replace("Transverse_Mercator", "Gauss_Kruger").Replace("transverse_mercator", "Gauss_Kruger");
+            File.WriteAllText(prjFilePath, content);
         }
         #endregion
 
